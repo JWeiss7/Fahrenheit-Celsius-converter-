@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fahrenheit to Celsius Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+ 
+function Question(question, answers, correct){
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+}
+
+Question.prototype.displayQuestion = 
+function (){
+    console.log(this.question);
+    for(var i =0; i < this.answers.length; i ++){
+        console.log(i + ' : ' + this.answers[i])
+    }
+}
+Question.prototype.checkAnswer = 
+function (ans) {
+    if(ans === this.correct){
+        console.log('Correct answer');
+    }else{
+        console.log('Wrong answer');
+    }
+}
+var q1 = new Question('What is 101 degrees fahrenheit converted to celsius? ',
+[38.33, 53.68, 27.93],
+0);
+  
+var q2 = new Question('What is 78 degrees fahrenheit converted to celsius? ',
+[27.86, 25.56, 32.23],
+1); 
+
+var q3 = new Question('What is 84 degrees fahrenheit converted to celsius? ',
+[26.48, 24.14, 28.89],
+2); 
+
+var questions = [q1, q2, q3];
+var n = Math.floor(Math.random() * questions.length); 
+
+
+questions[n].displayQuestion(); 
+var answer = parseInt(prompt('Please select the correct answer. '));
+
+questions[n].checkAnswer(answer);
+ 
+       
+</script>
