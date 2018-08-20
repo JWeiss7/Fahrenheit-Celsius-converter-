@@ -26,6 +26,8 @@ function (){
         console.log(i + ' : ' + this.answers[i])
     }
 }
+
+
 Question.prototype.checkAnswer = 
 function (ans) {
     if(ans === this.correct){
@@ -34,9 +36,11 @@ function (ans) {
         console.log('Wrong answer');
     }
 }
+for(var i=0; i < 5; i++){
+
 var q1 = new Question('What is 101 degrees fahrenheit converted to celsius? ',
 [38.33, 53.68, 27.93],
-0);
+0);  
   
 var q2 = new Question('What is 78 degrees fahrenheit converted to celsius? ',
 [27.86, 25.56, 32.23],
@@ -50,10 +54,9 @@ var questions = [q1, q2, q3];
 var n = Math.floor(Math.random() * questions.length); 
 
 
-questions[n].displayQuestion(); 
+questions[n].displayQuestion([n]); 
 var answer = parseInt(prompt('Please select the correct answer. '));
 
 questions[n].checkAnswer(answer);
- 
-       
+};
 </script>
