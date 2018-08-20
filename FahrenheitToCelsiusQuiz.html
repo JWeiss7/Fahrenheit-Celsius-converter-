@@ -53,10 +53,12 @@ var q3 = new Question('What is 84 degrees fahrenheit converted to celsius? ',
 var questions = [q1, q2, q3];
 var n = Math.floor(Math.random() * questions.length); 
 
-
+function displayAnswer(){
 questions[n].displayQuestion([n]); 
 var answer = parseInt(prompt('Please select the correct answer. '));
-
 questions[n].checkAnswer(answer);
+}
+setTimeout(displayAnswer, 8000); 
 };
+
 </script>
